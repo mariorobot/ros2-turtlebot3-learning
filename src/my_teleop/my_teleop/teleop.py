@@ -33,6 +33,9 @@ class Teleop(Node):
             elif key == 'd':
                 twist.angular.z = -0.5
             elif key == 'q':
+                twist = Twist()
+                self.pub.publish(twist)
+                print("stop code has sent")
                 break
 
             self.pub.publish(twist)
